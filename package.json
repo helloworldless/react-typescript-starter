@@ -7,8 +7,9 @@
   "author": "David A Good",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build index.html"
+    "clean": "rimraf dist/",
+    "dev": "yarn clean && parcel src/index.html",
+    "build": "yarn clean && parcel build index.html"
   },
   "dependencies": {
     "react": "^16.8.4",
@@ -21,7 +22,11 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.1",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "@types/react-router-dom": "^4.3.1",
     "parcel-bundler": "^1.12.3",
+    "rimraf": "^2.6.3",
     "typescript": "^3.3.4000"
   }
 }

@@ -4,7 +4,7 @@ type AppProps = {
     message: string
 }
 
-function App(props) {
+function App(props: AppProps) {
     return (<h1>{props.message}</h1>);
 }
 
