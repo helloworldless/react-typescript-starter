@@ -1,0 +1,27 @@
+{
+  "name": "react-typescript-starter",
+  "version": "1.0.0",
+  "description": "Starter with latests versions/features of React + Typescript",
+  "main": "index.js",
+  "repository": "https://github.com/paltamadura/react-typescript-starter.git",
+  "author": "David A Good",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-typescript": "^7.3.3",
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.3.4000"
+  }
+}
