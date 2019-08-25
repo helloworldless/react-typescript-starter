@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
 type AppProps = {
-    message: string
-}
+  message: string;
+};
 
 function App(props: AppProps) {
-    return (<h1>{props.message}</h1>);
+  return <h1 data-testid="message">{props.message}</h1>;
 }
 
 export default App;

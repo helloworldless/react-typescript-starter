@@ -9,7 +9,27 @@
   "scripts": {
     "clean": "rimraf dist/",
     "dev": "yarn clean && parcel src/index.html",
-    "build": "yarn clean && parcel build index.html"
+    "test": "jest",
+    "build": "yarn clean && parcel build src/index.html"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
   },
   "dependencies": {
     "react": "^16.8.4",
@@ -21,12 +41,19 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.3",
+    "@types/jest": "^24.0.18",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.3",
     "@types/react-router-dom": "^4.3.1",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
     "parcel-bundler": "^1.12.3",
-    "rimraf": "^2.6.3",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.3.4000"
   }
 }
