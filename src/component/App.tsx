@@ -1,11 +1,37 @@
-import * as React from "react";
+import React, { Dispatch } from 'react';
 
-type AppProps = {
-  message: string;
-};
+import { connect } from 'react-redux';
+import { RootAction, addUser, AppState } from './redux';
 
-function App(props: AppProps) {
-  return <h1 data-testid="message">{props.message}</h1>;
+export interface OwnProps {
+    message: string;
 }
 
-export default App;
+export type AppProps = OwnProps &
+    ReturnType<typeof mapStateToProps> & { dispatch: Dispatch<RootAction> };
+
+export const App: React.FC<AppProps> = ({
+    message,
+    users,
+    posts,
+    dispatch
+}) => {
+    console.log('rendering App');
+    return (
+        <>
+            <h1 data-testid="message">{message}</h1>
+            <button
+                data-testid="add-user-button"
+                onClick={() => dispatch(addUser({ id: '1', handle: 'sam91' }))}
+            >
+                Add User
+            </button>
+            <h1 data-testid="users">{JSON.stringify(users)}</h1>
+            <h1 data-testid="posts">{JSON.stringify(posts)}</h1>
+        </>
+    );
+};
+
+const mapStateToProps = ({ users, posts }: AppState) => ({ users, posts });
+
+export default connect(mapStateToProps)(App);
