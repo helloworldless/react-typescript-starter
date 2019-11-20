@@ -1,67 +1,75 @@
 {
-  "name": "react-typescript-starter",
-  "version": "1.0.0",
-  "description": "Starter with latests versions/features of React + Typescript",
-  "main": "index.js",
-  "repository": "https://github.com/paltamadura/react-typescript-starter.git",
-  "author": "David A Good",
-  "license": "MIT",
-  "scripts": {
-    "clean": "rimraf dist/",
-    "dev": "yarn clean && parcel src/index.html",
-    "test": "jest",
-    "build": "yarn clean && parcel build src/index.html"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+    "name": "react-typescript-starter",
+    "version": "1.0.0",
+    "description": "Starter with latests versions/features of React + Typescript",
+    "main": "index.js",
+    "repository": "https://github.com/paltamadura/react-typescript-starter.git",
+    "author": "David A Good",
+    "license": "MIT",
+    "scripts": {
+        "clean": "rimraf dist/",
+        "dev": "yarn clean && parcel src/index.html",
+        "test": "jest",
+        "build": "yarn clean && parcel build src/index.html",
+        "lint": "eslint --ext .js,.ts ./src/"
     },
-    "setupFilesAfterEnv": ["./setupTests.ts"]
-
-  },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-redux": "^7.1.1",
-    "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
-    "@babel/preset-env": "^7.4.1",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.3.3",
-    "@testing-library/jest-dom": "^4.2.3",
-    "@testing-library/react": "^9.1.3",
-    "@types/jest": "^24.0.18",
-    "@types/react": "^16.8.8",
-    "@types/react-dom": "^16.8.3",
-    "@types/react-redux": "^7.1.5",
-    "@types/react-router-dom": "^5.1.2",
-    "babel-jest": "^24.9.0",
-    "jest": "^24.9.0",
-    "parcel-bundler": "^1.12.3",
-    "prettier": "^1.18.2",
-    "rimraf": "^3.0.0",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.3.4000"
-  }
+    "jest": {
+        "roots": [
+            "<rootDir>/src"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json"
+        ],
+        "moduleDirectories": [
+            "node_modules"
+        ],
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "setupFilesAfterEnv": [
+            "./setupTests.ts"
+        ]
+    },
+    "dependencies": {
+        "axios": "^0.19.0",
+        "react": "^16.8.4",
+        "react-dom": "^16.8.4",
+        "react-redux": "^7.1.1",
+        "redux": "^4.0.4",
+        "redux-thunk": "^2.3.0",
+        "uuid": "^3.3.3"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.4.0",
+        "@babel/plugin-proposal-class-properties": "^7.4.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+        "@babel/preset-env": "^7.4.1",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.3.3",
+        "@testing-library/jest-dom": "^4.2.3",
+        "@testing-library/react": "^9.1.3",
+        "@types/jest": "^24.0.18",
+        "@types/react": "^16.8.8",
+        "@types/react-dom": "^16.8.3",
+        "@types/react-redux": "^7.1.5",
+        "@types/react-router-dom": "^5.1.2",
+        "@types/uuid": "^3.4.6",
+        "@typescript-eslint/eslint-plugin": "^2.8.0",
+        "@typescript-eslint/parser": "^2.8.0",
+        "babel-jest": "^24.9.0",
+        "eslint": "^6.6.0",
+        "eslint-config-prettier": "^6.7.0",
+        "jest": "^24.9.0",
+        "parcel-bundler": "^1.12.3",
+        "prettier": "^1.18.2",
+        "rimraf": "^3.0.0",
+        "ts-jest": "^24.0.2",
+        "typescript": "^3.3.4000"
+    }
 }

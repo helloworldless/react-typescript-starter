@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 import { App as UnconnectedApp, AppProps } from './App';
-import { RootAction, rootReducer } from './redux';
+import { RootAction, rootReducer } from '../store';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -39,5 +39,24 @@ it('adds a user and displays it', async () => {
     const button = getByTestId('add-user-button');
     fireEvent.click(button);
 
-    expect(getByTestId('users')).toHaveTextContent('sam91');
+    expect(getByTestId('users')).toHaveTextContent('Anon');
+});
+
+it('adds a user and displays it', async () => {
+    const store = createStore(rootReducer);
+
+    const { getByTestId } = render(
+        <Provider store={store}>
+            <App message="test with redux" />
+        </Provider>
+    );
+    const handleInput = getByTestId('new-userName-input');
+
+    const userName = 'sam101';
+    fireEvent.change(handleInput, { target: { value: 'sam101' } });
+
+    const button = getByTestId('add-user-button');
+    fireEvent.click(button);
+
+    expect(getByTestId('users')).toHaveTextContent('sam101');
 });

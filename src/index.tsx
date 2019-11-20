@@ -5,7 +5,7 @@ import AsyncFetchComponent from './component/AsyncFetchComponent';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, AnyAction } from 'redux';
-import { rootReducer } from './component/redux';
+import { rootReducer } from './store';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
